@@ -53,8 +53,8 @@ list1 = ['physics', 'chemistry', 'Math', 'Programming']
 list2 = [1, 12, 3, 7]
 
 del list1[2]                        # delete list elements
-list1 = list1 + list2               # concatenation
-list1.appned('asal')                # appending
+list2 = list2 + list2               # concatenation
+list1.append('asal')                # appending
 list3 = ['Hi!'] * 4                 # repetition
 TorF = 3 in [1, 2, 3]	            # membership
 list2.sort()                        # sorts "in place"

@@ -46,6 +46,7 @@ class SLinkedList:
         current_node.next = new_node
 
     def insert_in_between(self, middle_node, newdata):
+        """place it after the middle node"""
         if middle_node is None:
             print("The mentioned node is absent")
             return
@@ -53,25 +54,37 @@ class SLinkedList:
         new_node.next = middle_node.next
         middle_node.next = new_node
 
-    def removenode(self, remove_key):
-        pass
+    def remove_node(self, remove_key):
+        current_node = self.head
+        if current_node.data == remove_key:
+            self.head = current_node.next
+            return
+        while current_node.next:
+            if current_node.next.data == remove_key:
+                break
+            current_node = current_node.next
+
+        current_node.next = current_node.next.next
 
 
-list1 = SLinkedList
-list1.headval = Node("Mon")
+list1 = SLinkedList()
+list1.head = Node("Mon")
 e2 = Node("Tue")
 e3 = Node("Thu")
 
 # Link first Node to second node
-list1.headval.nextval = e2
+list1.head.next = e2
 
 # Link second Node to third node
-e2.nextval = e3
+e2.next = e3
 
 list1.listprint()
 list1.insert_at_beginning("Sun")
 list1.insert_at_end("Fri")
-list1.insert_in_between(list1.headval.nextval, "Wed")
+list1.insert_at_end("Sat")
+list1.insert_in_between(list1.head.next.next, "Wed")
+list1.remove_node("Wed")
 
-list.listprint()
+print('-'*50)
+list1.listprint()
 
