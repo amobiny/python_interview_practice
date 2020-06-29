@@ -68,10 +68,11 @@ list1.sort(key=str.lower)           # sorts irrespective of capital and small le
 list4 = [2, 4, 7, 11]
 a = list4.pop()                     # removes the last element from list4 and assign it to a    list4 = [2, 4, 7]
 b = list4.pop(2)                    # removes the third element from list4 and assign it to b   list4 = [2, 4]
-list4.append(13)                    # appends 13 to the list                                    list4 = [2, 4, 13]
-list4.insert(2, 14)                 # inserts 14 as the element with index2                     list4 = [2, 4, 14, 13]
 list4.remove(2)                     # removes the value=2 from the list                         list4 = [4, 14, 13]
 list4.remove(list4[2])              # removes the third element                                 list4 = [4, 14]
+
+list4.append(13)                    # appends 13 to the list                                    list4 = [2, 4, 13]
+list4.insert(2, 14)                 # inserts 14 as the element with index2                     list4 = [2, 4, 14, 13]
 list4.reverse()                     # reverses the list                                         list4 = [14, 4]
 list4 = list4[::-1]                 # reverse again                                             list4 = [4, 14]
 list4.extend([7, 4])                # extends it (append would make it [4, 14, [7, 4]])         list4 = [4, 14, 7, 4]
@@ -96,6 +97,7 @@ TrueOrFalse = 3 in (1, 2, 3)	    # membership
 ###########################################################################
 # Dictionary (Hash Table)
 ###########################################################################
+empty_dict = {}
 dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
 
 dict_keys = dict.keys()             # of type dict_keys(['Name', 'Age', 'Class'])
@@ -132,6 +134,7 @@ dict2.update({'level': 4, 'Name': 'Asghar'})    # to update and add multiple ele
 # Set
 ###########################################################################
 # A set is created by using the set() function or placing all the elements within a pair of curly braces.
+empty_set = set()
 Days = set(["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"])
 Months = {"Jan", "Feb", "Mar"}
 
@@ -141,6 +144,8 @@ for d in Days:
     print(d)
 
 Days.discard("Sun")                     # removing Item from a Set
+Days.remove("Mon")                      # removing Item from a Set
+Days.add("Mon")                         # adding Item to a Set
 
 DaysA = {"Mon", "Tue", "Wed"}
 DaysB = {"Wed", "Thu", "Fri", "Sat", "Sun"}
