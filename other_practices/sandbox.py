@@ -1,18 +1,24 @@
 
+class BinaryTreeNode(object):
 
-def is_palindrome(input_str):
-    is_odd = set()
-    for char_ in input_str:
-        if char_ in is_odd:
-            is_odd.discard(char_)
-        else:
-            is_odd.add(char_)
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
 
-    return True if len(is_odd) <= 1 else False
+    def insert_left(self, value):
+        self.left = BinaryTreeNode(value)
+        return self.left
+
+    def insert_right(self, value):
+        self.right = BinaryTreeNode(value)
+        return self.right
+
+    def is_superbalanced(self):
+        pass
 
 
-a = 'a'
-print(a.isalpha())
-
-# print(is_palindrome('civic'))
-
+root = BinaryTreeNode(5)
+node1 = root.insert_left(3)
+node2 = root.insert_right(8)
+print(root.is_superbalanced())

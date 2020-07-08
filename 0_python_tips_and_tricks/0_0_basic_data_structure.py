@@ -42,7 +42,8 @@ for a in range(1, 10, 2):       # start:1, stop:10, step_size
 sample_string = "Aryan loves Peggy and Hannah"
 list_of_words = sample_string.split()           # splits the words (separated by space)
 lower_case = sample_string.lower()              # lower case for all characters
-
+sample_string.isalpha()                         # Return True if all characters in S are alphabetic
+sample_string.isdigit()                         # Return True if all characters in S are digits
 print()
 
 ###########################################################################
